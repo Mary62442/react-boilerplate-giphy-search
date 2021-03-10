@@ -16,4 +16,8 @@ export default defineMessages({
     id: `${scope}.features`,
     defaultMessage: 'Features',
   },
+  giphy: {
+    id: `${scope}.giphy`,
+    defaultMessage: 'Giphy',
+  },
 });

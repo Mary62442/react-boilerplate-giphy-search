@@ -4,9 +4,8 @@ import PropTypes from 'prop-types';
 import List from 'components/List';
 import ListItem from 'components/ListItem';
 import LoadingIndicator from 'components/LoadingIndicator';
-import RepoListItem from 'containers/RepoListItem';
 
-function ReposList({ loading, error, repos }) {
+function GifsList({ loading, error, gifs }) {
   if (loading) {
     return <List component={LoadingIndicator} />;
   }
@@ -18,17 +17,17 @@ function ReposList({ loading, error, repos }) {
     return <List component={ErrorComponent} />;
   }
 
-  if (repos !== false) {
-    return <List items={repos} component={RepoListItem} />;
+  if (gifs !== false) {
+    return gifs.map((item) => <img style={{margin:"1rem"}} src={item} />);
   }
 
   return null;
 }
 
-ReposList.propTypes = {
+GifsList.propTypes = {
   loading: PropTypes.bool,
   error: PropTypes.any,
-  repos: PropTypes.any,
+  gifs: PropTypes.any,
 };
 
-export default ReposList;
+export default GifsList;
